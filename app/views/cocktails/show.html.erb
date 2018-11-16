@@ -1,0 +1,38 @@
+<p>
+  <strong>Nom:</strong>
+  <%= @cocktail.name %>
+</p>
+
+
+<p>
+  <strong> Dose:</strong>
+  <% @doses.each do |dose| %>
+</p>
+
+  <p>
+    <strong> Description:</strong>
+   <li><%=dose.description%></li>
+</p>
+
+
+<p>
+     <strong> ingredient:</strong>
+    <li><%=dose.ingredient.name%></li>
+    </p>
+
+    <p>
+ <%= link_to "Destroy", dose_path(dose), method: :delete %>
+  </p>
+
+  <% end %>
+
+
+
+
+
+
+<%= link_to 'Doses', new_cocktail_dose_path(@cocktail)%>
+<%= link_to "Edit", edit_cocktail_path %>
+
+<%= link_to "Back", cocktails_path %>
+
